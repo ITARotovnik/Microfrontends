@@ -30,7 +30,6 @@ const handleSubmit = async (e) => {
       console.log("User data:", userData);
 
       if (userData && userData.password === password) {
-        alert("Login successful. User data:", userData);
         localStorage.setItem("user", JSON.stringify(userData));
         navigate("/");
       } else {
@@ -53,6 +52,7 @@ const handleSubmit = async (e) => {
         <label>
           Email:
           <input
+          class="input"
             type="text"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
@@ -63,6 +63,8 @@ const handleSubmit = async (e) => {
         <label>
           Password:
           <input
+                    class="input"
+
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
@@ -70,7 +72,7 @@ const handleSubmit = async (e) => {
           />
         </label>
         <br />
-        <button type="submit">Login</button>
+        <button class="login" type="submit">Login</button>
       </form>
     </div>
   );

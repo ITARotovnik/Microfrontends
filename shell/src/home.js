@@ -1,8 +1,8 @@
 import React from "react";
 
 const Home = () => (
-  <div>
-Home page  </div>
+  <div class="home">
+To je home page za Mikrofrontende</div>
 );
 
 export default Home;

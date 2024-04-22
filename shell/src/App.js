@@ -4,6 +4,8 @@ import Header from "./header";
 import Home from "./home";
 import Registration from "./Registration";
 import Login from "./Login";
+import "./styles.css";
+
 const User = lazy(() => import("UserApp/App"));
 const Ticket = lazy(() => import("TicketApp/App"));
 const Payment = lazy(() => import("PaymentApp/App"));
@@ -34,8 +36,9 @@ function App() {
       <React.Suspense fallback={<div>Loading</div>}>
       <Routes>
   <Route path="/" element={<Home />} />
-  <Route path="/registration" element={<Registration />} />
   <Route path="/login" element={<Login />} />
+  <Route path="/registration" element={<Registration />} />
+
   {loggedIn && (
     <>
       <Route path="/user/*" element={<User />} />

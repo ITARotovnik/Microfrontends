@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 const Header = ({ isLoggedIn, onLogout }) => {
     return (
         <header>
+            <button className="logout" onClick={onLogout}>Logout</button>
+
             <h1>FRONTENDS</h1>
             <nav className="horizontal-nav">
                 <Link to="/">Home</Link>
@@ -12,7 +14,6 @@ const Header = ({ isLoggedIn, onLogout }) => {
                         <Link to="/user">Users</Link>
                         <Link to="/ticket"> Tickets</Link>
                         <Link to="/payment"> Payments</Link>
-                        <button onClick={onLogout}>Logout</button>
                     </>
                 ) : (
                     <>
@@ -21,6 +22,8 @@ const Header = ({ isLoggedIn, onLogout }) => {
                     </>
                 )}
             </nav>
+
+
         </header>
     );
 };
