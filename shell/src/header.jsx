@@ -1,17 +1,25 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Header = () => {
+const Header = ({ isLoggedIn, onLogout }) => {
     return (
         <header>
-            <h1>Ticket Frontend</h1>
+            <h1>FRONTENDS</h1>
             <nav className="horizontal-nav">
                 <Link to="/">Home</Link>
-                <Link to="/user">Users</Link>
-                <Link to="/ticket"> Tickets</Link>
-                <Link to="/payment"> Payments</Link>
-
-
+                {isLoggedIn ? (
+                    <>
+                        <Link to="/user">Users</Link>
+                        <Link to="/ticket"> Tickets</Link>
+                        <Link to="/payment"> Payments</Link>
+                        <button onClick={onLogout}>Logout</button>
+                    </>
+                ) : (
+                    <>
+                        <Link to="/login">Login</Link>
+                        <Link to="/registration">Registration</Link>
+                    </>
+                )}
             </nav>
         </header>
     );
